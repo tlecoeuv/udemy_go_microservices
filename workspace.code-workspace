@@ -21,5 +21,29 @@
 		{
 			"path": "listener-service"
 		}
-	]
+	],
+	"settings": {
+		"sqltools.connections": [
+			{
+				"previewLimit": 50,
+				"server": "localhost",
+				"port": 5432,
+				"driver": "PostgreSQL",
+				"name": "postgres12",
+				"username": "root",
+				"password": "secret",
+				"database": "root"
+			},
+			{
+				"previewLimit": 50,
+				"server": "localhost",
+				"port": 5432,
+				"driver": "PostgreSQL",
+				"name": "swarmtest",
+				"database": "users",
+				"username": "postgres",
+				"password": "password"
+			}
+		]
+	}
 }
