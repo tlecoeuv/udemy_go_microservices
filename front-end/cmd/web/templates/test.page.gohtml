@@ -150,27 +150,6 @@
 			})
 		})
 
-		brokerBtn.addEventListener("click", function() {
-			const body = {
-				method: 'POST',
-			}
-			console.log("broker button event listener trigerred");
-			fetch({{.BrokerURL}}, body)
-			.then((response) => response.json())
-			.then((data) => {
-					sent.innerHTML = "empty post request";
-					received.innerHTML = JSON.stringify(data, undefined, 4);
-					if (data.error) {
-						console.log(data.message);
-					} else {
-						output.innerHTML += `<br><strong>Response from broker service</strong>: ${data.message}`;
-					} 
-			})
-			.catch((error) => {
-				output.innerHTML += "<br><br>Error: " + error;
-			})
-		})
-
 		authBrokerBtn.addEventListener("click", function() {
 			const payload = {
 				action: "auth",
@@ -204,6 +183,28 @@
 				output.innerHTML += "<br><br>Error: " + error;
 			})
 		})
+
+		brokerBtn.addEventListener("click", function() {
+			const body = {
+				method: 'POST',
+			}
+			console.log("broker button event listener trigerred");
+			fetch({{.BrokerURL}}, body)
+			.then((response) => response.json())
+			.then((data) => {
+					sent.innerHTML = "empty post request";
+					received.innerHTML = JSON.stringify(data, undefined, 4);
+					if (data.error) {
+						console.log(data.message);
+					} else {
+						output.innerHTML += `<br><strong>Response from broker service</strong>: ${data.message}`;
+					} 
+			})
+			.catch((error) => {
+				output.innerHTML += "<br><br>Error: " + error;
+			})
+		})
+
 
 		
     </script>
