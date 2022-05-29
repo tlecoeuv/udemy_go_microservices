@@ -189,6 +189,7 @@
 				method: 'POST',
 			}
 			console.log("broker button event listener trigerred");
+			console.log({{.BrokerURL}})
 			fetch({{.BrokerURL}}, body)
 			.then((response) => response.json())
 			.then((data) => {
